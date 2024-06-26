@@ -15,35 +15,22 @@ array6([1, 4], 0) → false
 array6([6], 0) → true
 */
 
-func array6(nums []int, idx int) bool {
+func array6(nums []int, index int) bool {
 	// Base cases
-	if idx >= len(nums) {
+	if index >= len(nums) {
 		return false
 	}
-	if nums[idx] == 6 {
+	if nums[index] == 6 {
 		return true
 	}
 	// Recursive case
-	return array6(nums, idx+1)
+	return array6(nums, index+1)
 }
 
 func main() {
-	// var text []byte
-	// fmt.Println("Enter a string:")
-	// fmt.Scan(&text)
-	// changePi(text, 0)
 	fmt.Println(array6([]int{1, 6, 4}, 0))
 	fmt.Println(array6([]int{1, 4}, 0))
 	fmt.Println(array6([]int{6}, 0))
-	// fmt.Println("Pi changed to 3.14's:", string(text))
 }
 
-/*
-countX("xxhixx")
-countX("xhixx")
-countX("hixx")
-countX("ixx")
-countX("xx")
-countX("x")
-countX("")
-*/
+/**/

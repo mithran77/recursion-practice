@@ -12,13 +12,13 @@ allStar("abc") → "a*b*c"
 allStar("ab") → "a*b"
 */
 
-func allStar(text string) string {
+func allStar(str string) string {
 	// Base case
-	if len(text) <= 1 {
-		return string(text[0])
+	if len(str) <= 1 {
+		return str
 	}
-	// Recursive cases
-	return string(text[0]) + "*" + allStar(text[1:])
+	// Recursive case
+	return string(str[0]) + "*" + allStar(str[1:])
 }
 
 func main() {

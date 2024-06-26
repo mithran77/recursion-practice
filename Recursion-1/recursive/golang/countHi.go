@@ -13,26 +13,26 @@ countHi("hi") → 1
 
 */
 
-func countHi(text string) int {
+func countHi(str string) int {
 	// Base case
-	if len(text) < 2 {
+	if len(str) < 2 {
 		return 0
 	}
-	// Recursive case
-	if text[0] == 'h' && text[1] == 'i' {
-		return 1 + countHi(text[2:])
+	// Recursive cases
+	if str[:2] == "hi" {
+		return 1 + countHi(str[2:])
 	}
-	return 0 + countHi(text[1:])
+	return countHi(str[1:])
 }
 
 func main() {
-	var text string
-	fmt.Println("Enter a string:")
-	fmt.Scan(&text)
-	fmt.Println("Number of Hi's:", countHi(text))
+	fmt.Println(countHi("xxhixx"))
+	fmt.Println(countHi("xhixhix"))
+	fmt.Println(countHi("hi"))
 }
 
 /*
+RT's
 countX("xxhixx")
 countX("xhixx")
 countX("hixx")

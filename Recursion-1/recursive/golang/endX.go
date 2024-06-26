@@ -12,16 +12,16 @@ endX("xxhixx") → "hixxxx"
 endX("xhixhix") → "hihixxx"
 */
 
-func endX(text string) string {
+func endX(str string) string {
 	// Base case
-	if text == "" {
-		return text
+	if str == "" {
+		return str
 	}
 	// Recursive cases
-	if text[0] == 'x' {
-		return endX(text[1:]) + "x"
+	if str[0] == 'x' {
+		return endX(str[1:]) + "x"
 	} else {
-		return string(text[0]) + endX(text[1:])
+		return string(str[0]) + endX(str[1:])
 	}
 }
 

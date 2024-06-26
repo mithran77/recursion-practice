@@ -14,16 +14,16 @@ countPairs("axax") → 2
 countPairs("axbx") → 1
 */
 
-func countPairs(text string) int {
+func countPairs(str string) int {
 	// Base case
-	if len(text) < 3 {
+	if len(str) < 3 {
 		return 0
 	}
 	// Recursive cases
-	if text[0] == text[2] && text[0] != text[1] {
-		return 1 + countPairs(text[1:])
+	if str[0] == str[2] && str[0] != str[1] {
+		return 1 + countPairs(str[1:])
 	} else {
-		return countPairs(text[1:])
+		return countPairs(str[1:])
 	}
 }
 

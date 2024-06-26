@@ -18,13 +18,13 @@ func parenBit(str string) string {
 	if str[0] == '(' && str[len(str)-1] == ')' {
 		return str
 	}
+	// Recursive cases
 	if str[0] == '(' {
 		return parenBit(str[:len(str)-1])
 	}
 	if str[len(str)-1] == ')' {
 		return parenBit(str[1:])
 	}
-	// Recursive cases
 	return parenBit(str[1 : len(str)-1])
 }
 

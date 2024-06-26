@@ -14,24 +14,20 @@ bunnyEars2(2) → 5
 import "fmt"
 
 func bunnyEars2(bunnies int) int {
-	var ears int
 	// Base case
 	if bunnies < 1 {
 		return 0
 	}
-
-	// Recursive case
+	// Recursive cases
 	if bunnies%2 == 0 {
-		ears = 3
+		return 3 + bunnyEars2(bunnies-1)
 	} else {
-		ears = 2
+		return 2 + bunnyEars2(bunnies-1)
 	}
-	return ears + bunnyEars2(bunnies-1)
 }
 
 func main() {
-	var bunnies int
-	fmt.Println("Number of bunnies:")
-	fmt.Scan(&bunnies)
-	fmt.Println("Number of ears:", bunnyEars2(bunnies))
+	fmt.Println(bunnyEars2(0))
+	fmt.Println(bunnyEars2(1))
+	fmt.Println(bunnyEars2(2))
 }

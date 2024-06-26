@@ -13,26 +13,25 @@ powerN(3, 3) → 27
 
 */
 
-func powerN(num, power int) int {
+func powerN(base, n int) int {
 	// Base case
-	if power < 1 {
+	if n < 1 {
 		return 1
 	}
 
 	// Recursive case
-	return num * powerN(num, power-1)
+	return base * powerN(base, n-1)
 }
 
 func main() {
-	var num, power int
-	fmt.Println("Enter a number:")
-	fmt.Scan(&num)
-	fmt.Println("Enter the power:")
-	fmt.Scan(&power)
-	fmt.Println("nth powerN number:", powerN(num, power))
+	fmt.Println(powerN(3, 1))
+	fmt.Println(powerN(3, 2))
+	fmt.Println(powerN(3, 3))
 }
 
 /*
+RT's
+
 powerN(3,1)
 powerN(3,0)
 

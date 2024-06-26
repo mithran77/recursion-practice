@@ -22,8 +22,7 @@ func bunnyEars(bunnies int) int {
 }
 
 func main() {
-	var bunnies int
-	fmt.Println("Number of bunnies:")
-	fmt.Scan(&bunnies)
-	fmt.Println("Number of ears:", bunnyEars(bunnies))
+	fmt.Println(bunnyEars(0))
+	fmt.Println(bunnyEars(1))
+	fmt.Println(bunnyEars(2))
 }

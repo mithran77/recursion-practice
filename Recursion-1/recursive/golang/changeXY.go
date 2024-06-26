@@ -12,27 +12,27 @@ changeXY("xxhixx") → "yyhiyy"
 changeXY("xhixhix") → "yhiyhiy"
 */
 
-func changeXY(text []byte, idx int) {
+func changeXY(str string) string {
 	// Base case
-	if idx >= len(text) {
-		return
+	if str == "" {
+		return str
 	}
 	// Recursive case
-	if text[idx] == 'x' {
-		text[idx] = 'y'
+	if str[0] == 'x' {
+		return "y" + changeXY(str[1:])
+	} else {
+		return string(str[0]) + changeXY(str[1:])
 	}
-	changeXY(text, idx+1)
 }
 
 func main() {
-	var text []byte
-	fmt.Println("Enter a string:")
-	fmt.Scan(&text)
-	changeXY(text, 0)
-	fmt.Println("X changed to Y's:", string(text))
+	fmt.Println(changeXY("codex"))
+	fmt.Println(changeXY("xxhixx"))
+	fmt.Println(changeXY("xhixhix"))
 }
 
 /*
+RT's
 countX("xxhixx")
 countX("xhixx")
 countX("hixx")

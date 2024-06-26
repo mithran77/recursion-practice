@@ -31,4 +31,5 @@ func main() {
 	fmt.Println(nestParen("(())"))
 	fmt.Println(nestParen("((()))"))
 	fmt.Println(nestParen("(((x))"))
+	fmt.Println(nestParen("(((xyz))"))
 }

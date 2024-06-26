@@ -12,16 +12,16 @@ pairStar("xxyy") → "x*xy*y"
 pairStar("aaaa") → "a*a*a*a"
 */
 
-func pairStar(text string) string {
+func pairStar(str string) string {
 	// Base case
-	if len(text) <= 1 {
-		return string(text[0])
+	if len(str) <= 1 {
+		return str
 	}
 	// Recursive cases
-	if text[0] == text[1] {
-		return string(text[0]) + "*" + pairStar(text[1:])
+	if str[0] == str[1] {
+		return string(str[0]) + "*" + pairStar(str[1:])
 	}
-	return string(text[0]) + pairStar(text[1:])
+	return string(str[0]) + pairStar(str[1:])
 }
 
 func main() {

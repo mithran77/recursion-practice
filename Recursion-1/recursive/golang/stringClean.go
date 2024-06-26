@@ -13,16 +13,18 @@ stringClean("abbbcdd") → "abcd"
 stringClean("Hello") → "Helo"
 */
 
-func stringClean(text string) string {
+func stringClean(str string) string {
 	// Base case
-	if len(text) < 2 {
-		return text
+	if len(str) < 2 {
+		return str
 	}
 	// Recursive cases
-	if text[0] == text[1] {
-		return string(stringClean(text[1:]))
+	if str[0] == str[1] {
+		// return string(str[0]) + string(stringClean(str[2:]))
+		// Tackle adding the char at the end of repetition, as opposed to beginning
+		return string(stringClean(str[1:]))
 	} else {
-		return string(text[0]) + stringClean(text[1:])
+		return string(str[0]) + stringClean(str[1:])
 	}
 }
 
