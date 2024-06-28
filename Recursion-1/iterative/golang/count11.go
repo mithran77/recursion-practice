@@ -13,16 +13,14 @@ count11("111") → 1
 */
 
 func count11(str string) int {
-	// Base case
-	if len(str) < 2 {
-		return 0
+	count := 0
+	for i := 0; i < len(str); i++ {
+		if len(str)-i > 1 && str[i:i+2] == "11" {
+			count++
+			i++
+		}
 	}
-	// Recursive cases
-	if str[0:2] == "11" {
-		return 1 + count11(str[2:])
-	} else {
-		return count11(str[1:])
-	}
+	return count
 }
 
 func main() {
